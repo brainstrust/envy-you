@@ -1,4 +1,4 @@
-%% General constants %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% General constants %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Farad       = 96500         ;% [C mol-1]      Faradays constant
 R_gas       = 8.315         ;% [J mol-1K-1]
@@ -7,7 +7,7 @@ Temp        = 300           ;% [K]
 unitcon    = 10^(3)         ;% [-]            Factor to convert equations to another unit
 
 %% Constants of Ostby, the values come from CELL ML
-
+ 
 L_p         = 2.1e-9        ;% [m uM-1s-1]
 R_tot       = 8.79e-8       ;% [m]
 X_k         = 12.41e-3      ;% [uMm]
