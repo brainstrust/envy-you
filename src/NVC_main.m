@@ -1,7 +1,7 @@
 clean
 tic
 
-%global variables
+% global variables
 global CASE J_PLC startpulse lengthpulse 
 CASE        = 2; 
 J_PLC 		= 0.1;
