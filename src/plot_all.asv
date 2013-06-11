@@ -5,12 +5,12 @@ all_constants();
 
 linestylle = ':';
 
-n = zeros(1,8);     % fluxes Neuron
-a = zeros(1,25);    % fluxes AC
-s = zeros(1,30);    % fluxes SMC
-e = zeros(1,19);    % fluxes EC
-f = zeros(1,34);    % ODE solutions
-dfdt = zeros(1,34); % ODEs - rate of change
+n = zeros(1,8);     % ODEs Neuron
+a = zeros(1,25);    % ODEs AC
+s = zeros(1,30);    % ODEs SMC
+e = zeros(1,19);    % ODEs EC
+f = zeros(1,24);    % fluxes
+dfdt= zeros(1,34);  % total ODEs
 t = zeros(1,1);     % time
 input = zeros(1,4); % input
 
@@ -288,9 +288,9 @@ xlabel('Time [s]')
 ylabel('[Glu] in nM s^{-1}')
 
 subplot(3,2,2)
-    plot( time,DATA(:,inputoff+4));
+    plot( time,DATA(:,inputoff+3));
 xlabel('Time [s]')
-ylabel('wss in Pa')
+ylabel('[Glu] in nM s^{-1}')
 
 subplot(3,2,3)
 plot(time, state(:,ind.Ca_n) )
@@ -298,17 +298,17 @@ xlabel('time in s')
 ylabel('[Ca^{2+}]_n in \muM')
 
 subplot(3,2,4)
-plot(time, state(:,ind.eNOS_act))
-xlabel('time in s')
-ylabel('[eNOS_{act}] in \muM')
-
-subplot(3,2,5)
 plot(time, state(:,ind.nNOS_act))
 xlabel('time in s')
 ylabel('[nNOS_{act}] in \muM')
 
+subplot(3,2,5)
+plot(time, state(:,ind.eNOS_act))
+xlabel('time in s')
+ylabel('[eNOS_{act}] in \muM')
+
 subplot(3,2,6)
-plot(time, state(:,ind.NOn),time, state(:,ind.NOj),time, state(:,ind.NOi))
+plot(time, state(:,ind.NOn),tout2, xout2(:,ind.NOj),tout2, xout2(:,ind.NOi))
 xlabel('time in s')
 ylabel('[NO] in \muM')
 legend('[NO]_n','[NO]_j','[NO]_i')

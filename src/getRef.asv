@@ -42,7 +42,7 @@ function [out] = getRef(t,name)
 
  pulse_start = 100;
  pulse_end   = 200;
- 
+ gLU
  elseif strcmp('rho',name)
      out = createPulse(t,pulse_start,pulse_end,0.1,0.7,1,1); %[-] fraction between zero and one
  elseif strcmp('J_K_s',name)

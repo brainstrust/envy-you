@@ -1,16 +1,20 @@
 clean
 tic
 
-% global variables
+%% global variables
 global CASE J_PLC startpulse lengthpulse 
 CASE        = 2; 
 J_PLC 		= 0.1;
 startpulse  = 200; %200
 lengthpulse = 50; %[s] Ostby: 30  
 
-% Time span for which the simulation runs:
+%% NO pathway
+global m %(cGMP copeling (0 - lowest influence))
+m = 2;
+
+%% Time span for which the simulation runs:
 t_start = 0;
-t_end = 300;
+t_end = 1200;
 
 %% load the constants for the fluxes and pointers:
 all_indices();
