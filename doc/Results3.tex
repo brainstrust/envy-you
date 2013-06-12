@@ -1,0 +1,69 @@
+\section{Results}
+
+\subsection*{Potassium input signal (figure \ref{fig:K})}
+At the top the neuronal \gls{K} input signal is shown. This input signal is pumped into the SC by the \gls{NE}. As a result of that, there is more \gls{K} taken up by the \gls{AC} in the beginning of the input pulse, and released at the end of the input pulse. In the second graph the membrane potential of the AC is shown over time. When the \gls{K} concentration in the SC is increased the membrane voltage depolarizes and when the \gls{K} concentration in the SC decreases the membrane potential repolarizes again.
+In the third graph the fluxes into the PVS are shown. In blue the flux by the astrocytic BK channel, and in green the flux by the KIR channel in the SMC is shown. The drop in the middle of the KIR flux is caused because the SMC becomes in a oscillation state and therefore the efflux by the KIR channel follows the \gls{Ca} waves inside the SMC.
+The bottom figure shows the \gls{K} concentration in the PVS.
+
+\subsection*{SMC and EC fluxes (figure \ref{fig:SMCfluxes} and \ref{fig:ECfluxes})}
+In these figures the coupling and the fluxes in the SMC and EC are shown. When one of the fluxes is negative, it means that the direction of the flux is in the opposite than it is defined in the equations. These figures show also that when the neuronal signal is given, the VOCC closes and that the SMC goes into an oscillation state. 
+
+\subsection*{Conservation equations (figure \ref{fig:dfdt})}
+The graphs in this figure shows the solutions of the differential equations of the \gls{SMC} and \gls{EC}. The graphs on the left side are the SMC results, and at the right side the EC results. From top to bottom the following parameters are shown over time: the intracellular \gls{Ca} concentration, the \gls{IP3} concentration, the sarcoplasmic (\gls{SMC}) or endoplasmic (\gls{EC}) \gls{Ca} concentration, the membrane voltage and at the bottom for the SMC the open probability of the \gls{K} channels.
+
+\subsection*{Hai and Murphy and radius model (figure \ref{fig:Radius})}
+In this figure the fraction of the four states (M, Mp, AMp, AM) of myosin in the \cite{Hai1989} are shown at the top. At the bottom left the fraction of attached cross bridged myosin (the sum of AM and AMp) is shown. And at the bottom right the radius is plotted over time. The increase in vessel diameter is in the expected order of magnitude, however the slope is less steep than expected.
+
+\begin{landscape} 
+\begin{figure}[h!]
+	\centering
+	\tiny 
+	\setlength\figureheight{2.5 cm} 
+	\setlength\figurewidth{18 cm}
+	\input{K.tikz}
+	\caption{Potassium Input}
+	\label{fig:K}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\tiny 
+	\setlength\figureheight{2.5 cm} 
+	\setlength\figurewidth{4 cm}
+	\input{SMCfluxes.tikz}
+	\caption{SMC fluxes}
+	\label{fig:SMCfluxes}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\tiny 
+%	\newlength\figureheight 
+%	\newlength\figurewidth 
+	\setlength\figureheight{2.5 cm} 
+	\setlength\figurewidth{3.7 cm}
+	\input{ECfluxes.tikz}
+	\caption{EC fluxes}
+	\label{fig:ECfluxes}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\tiny 
+	\setlength\figureheight{2cm} 
+	\setlength\figurewidth{9 cm}
+	\input{DFDT.tikz}
+	\caption{dfdt}
+	\label{fig:dfdt}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\tiny 
+	\setlength\figureheight{3.5cm} 
+	\setlength\figurewidth{9 cm}
+	\input{Radius.tikz}
+	\caption{Radius}
+	\label{fig:Radius}
+\end{figure}
+\end{landscape} 

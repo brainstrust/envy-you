@@ -1,0 +1,129 @@
+%% Creator: Inkscape 0.48.3.1, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'All_models.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{605.30537109bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,1.30343551)%
+    \put(0,0){\includegraphics[width=\unitlength]{All_models.pdf}}%
+    \put(0.70622896,0.74955342){\color[rgb]{0,0,0}\makebox(0,0)[rb]{\smash{\footnotesize PVS}}}%
+    \put(0.70570623,0.1363683){\color[rgb]{0,0,0}\makebox(0,0)[rb]{\smash{\footnotesize EC}}}%
+    \put(0.70570623,0.39955848){\color[rgb]{0,0,0}\makebox(0,0)[rb]{\smash{\footnotesize SMC}}}%
+    \put(0.70570623,0.03264006){\color[rgb]{0,0,0}\makebox(0,0)[rb]{\smash{\footnotesize LU}}}%
+    \put(0.06158077,0.13934726){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{\footnotesize ER}}}%
+    \put(0.06158077,0.4674038){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{\footnotesize SR}}}%
+    \put(0.70663382,1.14873888){\color[rgb]{0,0,0}\makebox(0,0)[rb]{\smash{\footnotesize NE}}}%
+    \put(0.70605305,1.04975681){\color[rgb]{0,0,0}\makebox(0,0)[rb]{\smash{\footnotesize SC}}}%
+    \put(0.70652672,0.84855824){\color[rgb]{0,0,0}\makebox(0,0)[rb]{\smash{\footnotesize AC}}}%
+    \put(0.35552918,1.10640889){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{J$_{K}$}}}%
+    \put(0.45560905,1.10640889){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{J$_{Na}$}}}%
+    \put(0.12693733,0.94832804){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{J$_{KCC1}$}}}%
+    \put(0.20427191,0.94832804){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{J$_{NKCC1}$}}}%
+    \put(0.05301483,0.94832804){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{J$_{NBC}$}}}%
+    \put(0.36519602,0.94832804){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{J$_{NaK}$}}}%
+    \put(0.29920317,0.94832804){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{J$_{K}$}}}%
+    \put(0.45504051,0.94832804){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{J$_{Na}$}}}%
+    \put(0.60117994,0.94832804){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{J$_{Cl}$}}}%
+    \put(0.51986493,0.94832804){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{J$_{HCO_{3}}$}}}%
+    \put(0.36519602,0.7618153){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{J$_{BK}$}}}%
+    \put(0.41897832,0.53577413){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{\tiny A+M}}}%
+    \put(0.51903834,0.53577413){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{\tiny A+Mp}}}%
+    \put(0.5274572,0.43995109){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{\tiny AMp}}}%
+    \put(0.4273453,0.43995109){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{\tiny AM}}}%
+    \put(0.48510219,0.57117586){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{\tiny K$_1$}}}%
+    \put(0.48510219,0.5038442){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{\tiny K$_2$}}}%
+    \put(0.39058508,0.49269404){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{\tiny K$_7$}}}%
+    \put(0.49848162,0.49005071){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{\tiny K$_3$}}}%
+    \put(0.57096751,0.49269404){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{\tiny K$_4$}}}%
+    \put(0.48510219,0.47779714){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{\tiny K$_5$}}}%
+    \put(0.48510219,0.40949034){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{\tiny K$_6$}}}%
+    \put(0.52228093,0.49576158){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{\tiny power-
+}}}%
+    \put(0.52228093,0.48740302){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{\tiny stroke
+}}}%
+    \put(0.07581939,0.79833689){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{$J_{KIR}$}}}%
+    \put(0.22359571,0.61399779){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{$J_{NaK}$}}}%
+    \put(0.30421239,0.61399779){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{$J_{K}$}}}%
+    \put(0.05275714,0.51496591){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{$J_{CICR}$}}}%
+    \put(0.12354154,0.50174944){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{$J_{IP_3}$}}}%
+    \put(0.1821365,0.51496591){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{$J_{SR\_ leak}$}}}%
+    \put(0.25523667,0.50174944){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{$J_{SR\_ upt}$}}}%
+    \put(0.36706431,0.61399779){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{$J_{extr}$}}}%
+    \put(0.44159268,0.5950384){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{$J_{VOCC}$}}}%
+    \put(0.52238344,0.5950384){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{$J_{stretch}$}}}%
+    \put(0.59502037,0.5950384){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{$J_{NaCa}$}}}%
+    \put(0.66663381,0.5950384){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{$J_{Cl}$}}}%
+    \put(0.03341038,0.31720601){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{$J_{Ca^{2+}-cpl}$}}}%
+    \put(0.12920137,0.31720601){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{$V_{cpl}$}}}%
+    \put(0.18206983,0.31720601){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{$J_{IP_{3}-cpl}$}}}%
+    \put(0.05620867,0.17325346){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{$J_{CICR}$}}}%
+    \put(0.1144561,0.15318844){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{$J_{IP_3}$}}}%
+    \put(0.15300937,0.1725281){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{$J_{ER\_leak}$}}}%
+    \put(0.22212725,0.1528365){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{$J_{ER\_upt}$}}}%
+    \put(0.2913465,0.41058113){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{$J_{degrad}$}}}%
+    \put(0.32198892,0.13281819){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{$J_{degrad}$}}}%
+    \put(0.44884456,0.07783013){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{$J_{PLC}$}}}%
+    \put(0.28949406,0.22571535){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{$J_{0}$}}}%
+    \put(0.3454183,0.22571535){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{$J_{cation}$}}}%
+    \put(0.42380974,0.22571535){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{$J_{extr}$}}}%
+    \put(0.50501189,0.22571535){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{$J_{stretch}$}}}%
+    \put(0.59221696,0.22571535){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{$J_{K}$}}}%
+    \put(0.66001767,0.22571535){\color[rgb]{0.12941176,0.47058824,0.40392157}\makebox(0,0)[lb]{\smash{$J_{R}$}}}%
+    \put(0.79727193,0.82931694){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{\footnotesize Ca$^{2+}$ ion }}}%
+    \put(0.79727193,0.79740555){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{\footnotesize K$^{+}$ ion }}}%
+    \put(0.79727193,0.76739264){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{\footnotesize IP$_{3}$}}}%
+    \put(0.79727193,0.73284669){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{\footnotesize Na$^{+}$ ion}}}%
+    \put(0.79727193,0.70228023){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{\footnotesize agonist}}}%
+    \put(0.79727193,0.66789815){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{\footnotesize Cl$^{-}$ ion}}}%
+    \put(0.79727193,0.60179319){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{\footnotesize "voltage"}}}%
+    \put(0.79727193,0.56730405){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{\footnotesize degradation}}}%
+    \put(0.79727193,0.5343884){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{\footnotesize ion channel}}}%
+    \put(0.79727193,0.50144742){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{\footnotesize ion pump}}}%
+    \put(0.79753642,0.46868625){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{\footnotesize receptor}}}%
+    \put(0.7978327,0.63516465){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{\footnotesize HCO$^-_3$ ion}}}%
+  \end{picture}%
+\endgroup%
