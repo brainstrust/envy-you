@@ -1,0 +1,54 @@
+\section{Existing Models}
+\todo[inline]{In this chapter the existing model will be described and also mentioned how the different models are linked together}
+There are several models that are merged together.
+\todo[inline]{explain each model, include a picture, include all equations, references and variables, describe what the model is able to do, what input it needs, what the bugs are, what needs to be improved (new chapter)}
+
+\subsection{Astrocyte Model}
+note: the input signal of Ostby was extended by Loes and Evert by a second pulse that describes a ... They themselves call this input signal doubtable and furthermore it changes the steady state conditions before and after the pulse. This is why we switched it off again.
+
+
+\cite{Iadecola1993} During neural activity, K+ is released into the extracellular space by active neurons and is taken up by astrocytes, which consequently undergo depolarization. Astrocytic depolarization results in K+ efflux from distant portions of the cell, a process termed spatial buffering. Since most of the K+ conductance of astrocytes is located at the foot processes abutting the cerebral microvessels, the outward current carrying K+ would flow out of the cell largely through the end-feet. Thus, during increased neuronal activity, K+ released into the extracellular space would be 'siphoned' toward cerebral arterioles and capillaries producing relaxation of the vascular smooth muscles.
+\subsubsection{Overview}
+
+
+
+\begin{itemize}
+\item This model is based on the model of \citet{Ostby2009} and was reviewed by  \citet{LoesEvert}.
+\item Potassium influx into the SC (released from the neuron)
+\item there is no glutamate included $ \rightarrow $ should be included, using Franzis model
+\item fluxes are based on a volume-surface ration of the astrocyte and SC (their sum is constant)
+\item Prob: the steady state before and after the pulse is not the same
+\item Prob: the solution of the ODEs are not independent of the initial conditions, we assume this is the reason why we get a different steady state value before and after the pulse input
+\item Prob: volume ratio between the AC and the PVS influences the K-efflux (KIR channel) and membrane voltage of the SMC
+\item \todo[inline]{Ca buffering in the AC cytosol should be included }
+\item \todo[inline]{EET pathway is not included yet}
+\end{itemize}
+
+
+\subsection{SMC \& EC Model}
+\subsubsection{Overview}
+
+
+\todo[inline]{What is the expected PLC agonist concentration in the EC?}
+\begin{itemize}
+\item based on \cite{Koenigsberger2006} with a KIR channel added
+\item \todo[inline]{rho as a buffering factor should be added (equation from \cite{Gonzalez1994})}
+\item coupling between EC and SMC included (voltage, Ca, IP3)
+\item \todo[inline]{include stretch activated channels}
+\item the only link between AC model and this model is the potassium outflux through the KIR channel  
+\item \todo[inline]{Potassium conservation of mass equation needs to be included}
+\item Do the NaKi pump and the Ki channel lead into the PVS ? (at the moment into nowhere)
+\item Tim's question: Should Ca coupling be included in the membrane potential equation? at the moment there is a voltage coupling, but we want to include also the Ca coupling in the membrane potential equation
+\item wall shear stress from the lumen needs to be included
+\end{itemize}
+
+
+\subsection{Contraction / Mechanical Model}
+\subsubsection{Overview}
+
+
+\begin{itemize}
+\item What is the real relationship between the Ca concentration and the radius? - more references needed!
+\item At the moment: Ca input of SMC, cross-bridge model of \citet{HaiMurphy}, Kelvin-Voigt model for elastic response of the arterial wall (assuming Laplace-law), change in radius 
+\end{itemize}
+

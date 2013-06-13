@@ -30,3 +30,9 @@
 *.vrb
 *.xdy
 *.tdo
+
+main.pdf
+*.slg
+*.syg
+*.syi
+*.swp

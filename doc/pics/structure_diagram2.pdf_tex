@@ -1,0 +1,69 @@
+%% Creator: Inkscape 0.48.3.1, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'structure_diagram2.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{881.640625bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.46407939)%
+    \put(0,0){\includegraphics[width=\unitlength]{structure_diagram2.pdf}}%
+    \put(0.60524767,0.29103178){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{all\_fluxes.m}}}%
+    \put(0.3579898,0.29207296){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{DEsyst.m}}}%
+    \put(0.09248878,0.29189573){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{NVC\_main.m}}}%
+    \put(0.15658009,0.0820973){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{odeabort.m}}}%
+    \put(0.15658009,0.01607996){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{odeprogWD.m}}}%
+    \put(0.60524767,0.37706758){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{all\_indices.m}}}%
+    \put(0.8484043,0.24212349){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{getRef.m}}}%
+    \put(0.84770957,0.32758306){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Hill.m}}}%
+    \put(0.84830505,0.15387078){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{createPulse.m}}}%
+    \put(0.84830505,0.06832614){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{createSig.m}}}%
+    \put(0.15733421,0.1509148){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{plot\_all.m}}}%
+    \put(0.37723865,0.01790877){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{writeFlux.m}}}%
+    \put(0.60524767,0.20499594){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{all\_constants.m}}}%
+    \put(0.01376533,0.43541655){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{clean.m}}}%
+    \put(0.21492768,0.43542364){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{InitCond.m}}}%
+  \end{picture}%
+\endgroup%

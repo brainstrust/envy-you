@@ -1,0 +1,57 @@
+\section{Introduction}
+\subsection{Neurovascular Unit}
+%what cells do we look at and how are they orientated to each other? - take parts of L\&E
+
+The cerebral cortex, a highly complex component of the human brain and part of the grey matter (\textit{substantia grisea}),   mainly consists of neurons (\gls{NE}s), unmyelinated axons and glial cells such as astrocytes (\gls{AC}s). It forms the outer layer of \textit{cerebrum} and \textit{cerebellum} and is veined with capillary blood vessels that provide the brain tissue with glucose and oxygen (\citet{Shipp2007}). Those arterioles are surrounded by endothelial cells (\gls{EC}s) that form a thin layer at the interior surface of arterioles (\textit{intima}). The outer layer of the arteriole consists of smooth muscle cells (\gls{SMC}s), which are  aligned in circumferential direction. They define the contractile unit of the vessel and regulate its diameter by contraction and dilation.\\
+
+A neurovascular unit (\gls{NVU}) defined in this research includes one cell of each of the described types and is graphically pictured in Figure~\ref{Overview1}. \\ 
+\begin{figure}[h!]
+  \centering
+  \def\svgwidth{450pt}
+  \scriptsize 
+%  \includegraphics[width=130mm]{Bilder/Overview_NVU.png}
+  \import{pics/}{Overview_without_gaps.pdf_tex}
+  \caption{\textbf{Overview of different cells and domains that form a neurovascular unit.}  \gls{NE} - Neuron, \gls{SC} - Synaptic cleft, \gls{AC}  - Astrocyte,  \gls{ER}  - Endoplasmic reticulum,  \gls{PVS}  - Perivascular space,  \gls{SMC}  - Smooth muscle cell, SR - Sarcoplasmic reticulum,  \gls{EC}  - Endothelial cell,     \gls{LU}  - Lumen with indicated blood flow. Intercellular communication via the exchange of ions is indicated by arrows. }
+\label{Overview1}
+\end{figure}
+
+Each of the cell types and the spaces in between play an important role within the process of neurovascular coupling (\gls{NVC}, see section \ref{section:NVC}). The synaptic cleft (\gls{SC}) is the space between a terminal of an axon of one \gls{NE} and the dendrite of another \gls{NE} in which neurotransmitters are released. It is enclosed by the star-shaped \gls{AC}s that can take up released neurotransmitters as well. Protoplasmic \gls{AC}s are  polarized cells which can temporarily buffer extracellular \gls{K}, which is one of the key mechanisms within \gls{NVC}.  The astrocytic endoplasmatic reticulum (\gls{ER}), an isolated space in the cytosol, contains \gls{IP3}-sensitive \gls{Ca} channels, which can release \gls{Ca}-ions into the cytosol. The perivascular space (\gls{PVS}) is located between the end feet of an \gls{AC} and the arteriole. Via the perivascular space, ion exchange occurs between the arterial wall and the \gls{AC}.  The \gls{EC}s form a monolayer in the luminal side of the vessel in which all cells are aligned in the direction of the flow. It prevents passive diffusion of bigger molecules, while small ones such as \gls{O2}, \gls{Ca} or \gls{IP3} can pass through.  It also functions as an active organ sensing wall shear stress, which plays an important role in the \gls{NO}-mediated pathway. Together with the SMC layer the endothelium forms the blood brain barrier (BBB), the physical frontier between brain tissue and blood vessel.
+Contraction of the \gls{SMC} occurs by actin and myosin filaments forming cross-bridges. The rate of contraction is dependent on the \gls{SMC} cytosolic \gls{Ca} concentration.\\
+ 
+
+
+
+
+
+
+\subsection{Neurovascular Coupling} \label{section:NVC}
+Neurovascular coupling (\gls{NVC}) or functional hyperaemia describes the local vasodilation and~-contraction due to neuronal activation. The change in the vessel diameter (vasoreactivity) controls the blood flow and thereby the cerebral supply of oxygen and glucose. \\
+Each cell type plays an important specific role during the process of NVC. Communication between cells is based on an exchange of ions through pumps and channels. These ion fluxes contribute to changes in cytosolic and intercellular species concentration and cell membrane potentials.\\
+There are several pathways that can lead to vasocontraction or -dilation and are mediated by different signalling molecules, such as \gls{K}, \gls{Ca}, EET, \gls{NO} and 20-HETE. \\
+Neurotransmitters are released by the \gls{NE} into the \gls{SC} and can bind to receptors at dendrites of other neurons and astrocytes. This leads to a cascade of chemical reactions and the opening and closing of ion channels which influences the fluxes and concentrations.
+
+%
+%  be taken up by
+%
+% of events finally leading to inositol trisphosphate (IP3) production in the astrocytic cytosol [24].
+% 
+% 
+% %  
+%A change in the astrocyte’s membrane potential together with the increased EET concentration activates the BK-channels. These channels are located on the end-feet of the astrocyte and cause an efflux of K+ ions into the perivascular space. During neuronal activation this efflux increases.
+%A moderate increase in the potassium concentration in the perivascular space causes the activa- tion of the potassium inward rectifying (KIR) channel. This KIR channel causes a depolarisation of the SMC. However, when the perivascular space’ potassium concentration is increased above a certain level, the KIR channel starts pumping potassium out of the cell, causing hyperpolarisation [2, 12].
+%The voltage operated calcium channel (VOCC), which also interacts between SMC and its extra cellular space, pumps calcium into the cytosol. The influx of Ca2+ ions through the VOCC decreases when the SMC hyperpolarises [29] and amplifies the hyperpolarisation of the SMC.
+%This hyperpolarasition decreases the influx of calcium. The calcium concentration in the SMC influences the myosin binding process. Actin filaments have several binding sites to which myosin can bind. However, in rest these binding sites are blocked by troponin. Free Ca2+ ions will cause troponin to move slightly which opens the binding sites. Then, cross bridges can be made between the actin and myosin. During hyperpolarisation, fewer Ca2+ ions enter the SMC. Consequentially, fewer cross bridges can be formed, which means that the vessel will dilate.
+%A dilated vessel decreases the resistance to the flow, which causes an increase of flow and decrease of pressure drop over the vessel. Higher blood flow increases the diffusion process of chemicals, for example oxygen, through the cell wall into the surrounding tissue. Note that this is the intended response to neuronal activation of the NVU.
+%
+%%This document describes the code which includes the models of Ostby, Koenigsberger, HaiMurphy 
+
+
+\subsection{Mathematical Approach}
+The physiological models are based on a set of differential equations that describe the mass conservation of ions and molecules (passing from one cell or domain to another). The simulations describe time-dependent ion fluxes and changes in membrane potential modelled by reaction rates that describe the kinetics which are physiologically validated by experimental data from the literature. \\
+This approach assumes homogeneous behaviour of a variable in a certain subdomain i.e. the spatial gradient of this variable in every subdomain is negligible.
+%general mathematical modelling - definition of domains ('boxes') -  In the models  a lumped parameter approach is used.
+%cells communicate with each other via ion fluxes - mathematically, this communication can be expressed by differential equations describing the mass conservation (explain!) and changes in membrane potential  
+
+ 
+
+
