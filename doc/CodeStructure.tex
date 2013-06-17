@@ -1,0 +1,23 @@
+\section{Code Structure}
+%\todo{check all filenames! Loes and Evert used different ones than I did!}
+
+The main script of the code is named \textit{'NVC\_main.m'} and calls all the needed functions and other scripts. A graphic structure diagram is given in Figure~\ref{fig:Structure}.\\
+\textit{'all\_constants.m'} contains all variables used in the model and is created to give a clear overview and  furthermore to make it easy to recognize if variables are defined twice in the code inadvertently. In \textit{'all\_indices.m'} indices are defined for all differential equations (stored in the structure \textit{ind}) and all fluxes (stored in the structure \textit{flu}). 
+
+The fluxes and other non-differential equations are stored in \textit{'all\_fluxes.m'}. Here, a separate array is defined for each cell (NE, AC, SMC, EC) to create a clearly arranged structure. The indices refer to the corresponding cell type or domain (NE - n, AC - k, SMC - i, EC - j).\\
+The mass conservation equations describing the time-dependent rate of change for each species concentration and membrane voltage, respectively, are stored in \textit{'DEsyst.m'}. In the main script an ODE solver with adjustable options is chosen to solve the set of ordinary differential equations. The  solution for each iteration step and the corresponding time are stored in the two variables \textit{state} and \textit{time}, respectively.  The functions \textit{'odeprog()'} and \textit{'odeabort()'}  \cite{Franklin} give a GUI  with a visual progress bar to show the approximate remaining time and allow to abort the equation solving process via the \textit{'Abort'}-button. After each iteration step the function \textit{'writeFlux()'} is called to write each flux and ode solution, the corresponding flowrate (right hand side of the ODE) and time step into the array structure $DATA $. The stored values are used by the function \textit{ 'plot\_all.m'} to plot different state variables or fluxes. \\
+The values of the two global variables $ CASE $ and $ J\_PLC $ can be changed in the main script in order to obtain different coupling strengths and binding agonist concentration, respectively. 
+
+\begin{figure}[h!]
+  \centering
+  \def\svgwidth{450pt} %400pt
+  \footnotesize
+  \import{pics/}{structure_diagram2.pdf_tex}
+  \caption{\textbf{Diagram to illustrate the code structure.} The main script (\textit{'NVC\_main.m'}) calls an ode solver which solves the set of differential equations iteratively and stores the solution of each time step into a data file.}
+\label{fig:Structure}
+\end{figure}
+
+
+%include contain defines 
+
+%\todo[inline]{What is the expected PLC agonist concentration in the EC?}
