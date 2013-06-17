@@ -282,34 +282,38 @@ set(gcf,'Position', [24 62 1616 904],...
         'PaperPosition', [0.634517 6.34517 20.3046 15.2284]...
         );
    
-subplot(3,2,1)
+subplot(4,2,1)
     plot( time,DATA(:,inputoff+3));
 xlabel('Time [s]')
 ylabel('[Glu] in nM s^{-1}')
 
-subplot(3,2,2)
+subplot(4,2,2)
     plot( time,DATA(:,inputoff+4));
 xlabel('Time [s]')
 ylabel('wss in Pa')
 
-subplot(3,2,3)
+subplot(4,2,3)
 plot(time, state(:,ind.Ca_n) )
 xlabel('time in s')
 ylabel('[Ca^{2+}]_n in \muM')
 
-subplot(3,2,4)
+subplot(4,2,5)
 plot(time, state(:,ind.eNOS_act))
 xlabel('time in s')
 ylabel('[eNOS_{act}] in \muM')
 
-subplot(3,2,5)
+subplot(4,2,6)
 plot(time, state(:,ind.nNOS_act))
 xlabel('time in s')
 ylabel('[nNOS_{act}] in \muM')
 
-subplot(3,2,6)
+subplot(4,2,7)
 plot(time, state(:,ind.NOn),time, state(:,ind.NOj),time, state(:,ind.NOi))
 xlabel('time in s')
 ylabel('[NO] in \muM')
 legend('[NO]_n','[NO]_j','[NO]_i')
 
+subplot(4,2,8)
+plot(time, state(:,ind.cGMP))
+xlabel('time in s')
+ylabel('[cGMP] in \muM')
