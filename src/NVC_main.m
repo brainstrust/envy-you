@@ -9,7 +9,7 @@ startpulse  = 200; %200
 lengthpulse = 50; %[s] Ostby: 30  
 
 %% NO pathway
-global m %(cGMP coupling (0 - lowest influence to 2 - highest influence))
+global m %(cGMP copeling (0 - lowest influence))
 m = 2;
 
 %% Time span for which the simulation runs:
