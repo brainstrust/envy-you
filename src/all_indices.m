@@ -1,6 +1,6 @@
 
 %% ODE indices
-ind.R_k     = 1;   
+ind.R_k     = 1;  % 
 ind.N_Na_k  = 2;
 ind.N_K_k   = 3;
 ind.N_HCO3_k= 4;
@@ -29,30 +29,6 @@ ind.AMp     = 22;
 ind.AM      = 23;
 
 ind.R       = 24;
-
-%% NO pathway - ODE
-i = 24;
-ind.NOi             = i+1;        % NO concentration in the SMC
-ind.NOj             = i+2;        % NO concentration in the EC
-ind.NOn             = i+3;        % NO concentration in the neuron
-ind.cGMP            = i+4;  
-ind.eNOS_act        = i+5;        % activation and deactivation of eNOS
-ind.nNOS_act        = i+6;        % activation and deactivation of nNOS
-ind.Ca_n            = i+7;        % the calcium concentration in the neuron in n
-ind.E_b             = i+8;  
-ind.E_6c            = i+9;  
-ind.E_5c            = i+10;  
-
-%% NO pathway - NE
-j = 0;
-flu.P_NR2AO         = j+1 ;
-flu.P_NR2BO         = j+2 ; 
-flu.openProbTerm    = j+3 ;  
-flu.I_Ca            = j+4 ;  
-flu.phi_N           = j+5 ;
-flu.dphi_N          = j+6 ; 
-flu.N               = j+7 ;  
-flu.CaM             = j+8 ; 
 
 %% Astrocyte indices
 flu.R_s     = 1;%R_tot- R_k;
@@ -85,8 +61,6 @@ flu.E_BK_k  =23;
 flu.w_inf   =24;
 flu.phi_w   =25;
 
-
-
 %% SMC-pointers
 
 flu.v_coup_i        = 1;
@@ -115,21 +89,11 @@ flu.M               = 21;
 flu.h_r             = 22;
 flu.E_K_i           = 23;
 
-%% NO pathway - SMC
-k = 23;
-flu.k4              = k+1;   
-flu.R_cGMP1         = k+2;   
-flu.R_NO            = k+3;   
-flu.v_Ca3           = k+4;  
-flu.P_O             = k+5;  
-flu.R_cGMP2         = k+6;  
-flu.K2              = k+7;  
-
 %% EC-pointers
 
-flu.v_coup_j        = 1;
-flu.Ca_coup_j       = 2;
-flu.IP3_coup_j      = 3;
+flu.v_coup_j         = 1;
+flu.Ca_coup_j        = 2;
+flu.IP3_coup_j       = 3;
 flu.rho_j           = 4;
 flu.J_0_j           = 5;
 flu.J_IP3_j         = 6;
@@ -145,7 +109,3 @@ flu.J_R_j           = 15;
 flu.J_degrad_j      = 16;
 flu.J_stretch_j     = 17;
 
-%% NO pathway - EC
-l = 17;
-flu.W_tau_w         = l+1;  
-flu.F_tau_w         = l+2;  

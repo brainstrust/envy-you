@@ -85,23 +85,4 @@ dy(ind.R)= R0pas_r/nu_r *(state(ind.R)*P_r/SMC(flu.h_r) - E_r * ((state(ind.R) -
 % 
 % dy(R)       = 1/nu_r * ( P_r*state(R)/h_r - sigp_r - siga_r);
 
-%% NO pathway 
-
-% NE           
-       dy(ind.Ca_n)       = (((NE(flu.I_Ca))/(2*F*v_spine)-(k_ex*(state(ind.Ca_n)-Ca_rest)))/(1+lambda));                           % cytosolic [Ca2+] in the NE in \muM
-       dy(ind.nNOS_act)   = V_maxNOS*(NE(flu.CaM)-CaM_thresh)/(K_actNOS+NE(flu.CaM)-CaM_thresh)-mu2*state(ind.nNOS_act);            % activated nNOS in \muM
-       dy(ind.NOn)        = V_nNOS*(state(ind.nNOS_act)) - ((state(ind.NOn)-state(ind.NOi))/tau_ni) - (k_O2*state(ind.NOn)^2*On);   % NO concentration in the neuron ; (95)
-        
-% SMC              
-       dy(ind.NOi)        = (state(ind.NOn)-state(ind.NOi))/tau_ni+(state(ind.NOj)-state(ind.NOi))/tau_ji-k_dno*state(ind.NOi);                % NO concentration in the SMC ; 
-       dy(ind.E_b)        = -k1*state(ind.E_b)*state(ind.NOi)+k_1*state(ind.E_6c) + SMC(flu.k4)*state(ind.E_5c);     
-       dy(ind.E_6c)       = k1*state(ind.E_b)*state(ind.NOi)-k_1*state(ind.E_6c)-k2*state(ind.E_6c)- k3*state(ind.E_6c)*state(ind.NOi);
-       dy(ind.E_5c)       = k3*state(ind.E_6c)*state(ind.NOi)+k2*state(ind.E_6c) - SMC(flu.k4)*state(ind.E_5c);
-       dy(ind.cGMP)       = V_max_sGC*state(ind.E_5c)-(k_pde*state(ind.cGMP)^2)/(K_m_pde+state(ind.cGMP));
-       
-% EC
-%        dfdt(ind.eNOS_act)   =                           -mu2*state(ind.eNOS_act)+g_max*EC(flu.F_tau_w) ;          % (104) without the Ca2+ part
-       dy(ind.eNOS_act)   = ((K_dis*state(ind.Ca_j))/(K_eNOS+state(ind.Ca_j)))-mu2*state(ind.eNOS_act)+g_max*EC(flu.F_tau_w) ;          % (104)
-       dy(ind.NOj)        = V_eNOS*(state(ind.eNOS_act)) - (state(ind.NOj)-state(ind.NOi))/tau_ji   - k_O2*(state(ind.NOj))^2*Oj - state(ind.NOj)*4*3300/(25^2);
-
 end

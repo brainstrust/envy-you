@@ -47,10 +47,7 @@ function [out] = getRef(t,name)
      out = createPulse(t,pulse_start,pulse_end,0.1,0.7,1,1); %[-] fraction between zero and one
  elseif strcmp('J_K_s',name)
      out = createPulse(t,pulse_start,pulse_end,1,8,1); % [microMs-1]
- elseif strcmp('Glu',name)
-     out = createPulse(t,100,250,0,2,3,3); 
- elseif strcmp('wss',name)
-     out = createPulse(t,450,800,0,4,3,3); 
+    
  elseif strcmp('fthannah',name)
      if t>=100 && t<160
         out =0.35*(1+tanh((t-101)/3));        

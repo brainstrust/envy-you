@@ -7,6 +7,7 @@ function [NE,AC,SMC,EC] = all_fluxes (t,state)
 
 % Below all the additional equations are calculated and stores in AC, SMC
 % and EC
+NE=[];
 
 AC(flu.R_s)    = R_tot - state(ind.R_k);                               % m
 
@@ -115,40 +116,6 @@ EC(flu.J_R_j)               = G_R * ( state(ind.v_j) - v_rest);
 EC(flu.J_degrad_j)          = k_j * state(ind.I_j);
 EC(flu.J_stretch_j)         = G_stretch/(1+exp(-alpha1*(P_str*state(ind.R)/SMC(flu.h_r) - sig0))) * (state(ind.v_j) - Esac);
 
-
-
-%% NO pathway
-
-Glu = getRef(t,'Glu');
-tau_w = getRef(t,'wss');
-
-% NE
-NE(flu.P_NR2AO)         = Glu/(betA+Glu); 
-NE(flu.P_NR2BO)         = Glu/(betB+Glu);
-NE(flu.openProbTerm)    = 0.63 * NE(flu.P_NR2AO) + 11 * NE(flu.P_NR2BO);
-NE(flu.I_Ca)            = (-4*v_n*G_M*P_Ca_P_M*(Ca_ex/M))/(1+exp(-0.08*(v_n+20)))...
-                            *(exp(2*1e-3*v_n*F/(R*T)))/(1-exp(2*1e-3*v_n*F/(R*T)))...
-                            *(0.63*NE(flu.P_NR2AO)+11*NE(flu.P_NR2BO));     % inward calcium current per open NMDA receptor ; (96)
-NE(flu.phi_N)           = 1 + Q1*state(ind.Ca_n) + Q1*Q2*state(ind.Ca_n)^2 + Q1*Q2*Q3*state(ind.Ca_n)^3 + Q1*Q2*Q3*Q4*state(ind.Ca_n)^4;        % (102)
-NE(flu.dphi_N)          = Q1 + 2*Q1*Q2*state(ind.Ca_n) + 3*Q1*Q2*Q3*state(ind.Ca_n)^2 + 4*Q1*Q2*Q3*Q4*state(ind.Ca_n)^3;            % == d(phi_N)/d(ind.Ca_n) ; (part of 101)
-NE(flu.N)               = (state(ind.Ca_n)/NE(flu.phi_N))*NE(flu.dphi_N);                                                   % number of Ca2+ bound per calmodulin ; (101)
-NE(flu.CaM)             = state(ind.Ca_n)/NE(flu.N);                                      % concentration of calmodulin / calcium complexes ; (100)            
-
-            
-% EC
-EC(flu.W_tau_w)         = W_0*(tau_w + sqrt(16*delt_wss^2+tau_w^2)-4*delt_wss)^2/(tau_w+sqrt(16*delt_wss^2+tau_w^2)) ; 
-EC(flu.F_tau_w)         = (1/(1+alp*exp(-EC(flu.W_tau_w))))-(1/(1+alp)); % -(1/(1+alp)) was added to get no NO at 0 wss (!)
-
-
-% SMC 
-SMC(flu.k4)             = C_4*state(ind.cGMP)^m;
-SMC(flu.R_cGMP1)        = (state(ind.cGMP)^2)/(state(ind.cGMP)^2+K_m_cGMP^2);
-SMC(flu.R_NO)           = (state(ind.NOi)/(state(ind.NOi)+K_m_NO)) ;
-SMC(flu.v_Ca3)          = V_cGMP*SMC(flu.R_cGMP1) - V_NO*SMC(flu.R_NO) - V_b;
-SMC(flu.P_O)            = (state(ind.Ca_i) + c_wi )^2/( (state(ind.Ca_i) + c_wi )^2 + bet_i*exp(-(state(ind.v_i) - SMC(flu.v_Ca3)) / (R_Kfit)) );
-SMC(flu.R_cGMP2)        = (state(ind.cGMP)^2)/(state(ind.cGMP)^2+K_m_mlcp^2);
-SMC(flu.K2)             = k_mlcp_b+k_mlcp_c*SMC(flu.R_cGMP2);
-% SMC(flu.test)           = (((K_dis*state(ind.Ca_j))/(K_eNOS+state(ind.Ca_j)))-mu2*state(ind.NOj)+g_max*EC(flu.F_tau_w)) - (state(ind.NOj)-state(ind.NOi))/tau_ji - k_O2*(state(ind.NOj))^2*Oj;
 
 end
 
