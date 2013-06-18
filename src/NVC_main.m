@@ -21,7 +21,7 @@ state0 = InitCond();
 global csvfilename
 csvfilename = 'Data_simulation.csv';
 try
-delete(csvfilename) % remove file, if present from older simmulation.
+delete(csvfilename) % remove file, if present from older simulation.
 end
 %% Solve the proces from initial position tot Steady State:
 options = odeset('OutputFcn',@odeprogWD,'Events',@odeabort,'Stats','on','RelTol', 1e-03, 'AbsTol', 1e-03, 'MaxStep', 1); 
