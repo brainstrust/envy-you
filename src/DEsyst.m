@@ -44,12 +44,11 @@ dy(ind.v_j) 	=  - 1/C_m * ( EC(flu.J_K_j)	+ EC(flu.J_R_j) ) + EC(flu.v_coup_j);
 dy(ind.I_j) 	= EC(flu.IP3_coup_j) + J_PLC - EC(flu.J_degrad_j)  ;
 
 % Myosin crossbridge model
-K1_c = gam_cross*state(ind.Ca_i)^3;
-K6_c = K1_c;
 
-dy(ind.Mp)      = K4_c*state(ind.AMp) + K1_c*SMC(flu.M) - (K2_c + K3_c)*state(ind.Mp);
-dy(ind.AMp)     = K3_c*state(ind.Mp) + K6_c*state(ind.AM) - (K7_c + K5_c)*state(ind.AMp);
-dy(ind.AM)      = K5_c*state(ind.AMp) - (K7_c + K6_c)*state(ind.AM);
+
+dy(ind.Mp)      = K4_c*state(ind.AMp) + SMC(flu.K1_c) *SMC(flu.M) - (K2_c + K3_c)*state(ind.Mp);
+dy(ind.AMp)     = K3_c*state(ind.Mp) + SMC(flu.K6_c) *state(ind.AM) - (K7_c + K5_c)*state(ind.AMp);
+dy(ind.AM)      = K5_c*state(ind.AMp) - (K7_c + SMC(flu.K6_c) )*state(ind.AM);
 
 % Radius change
 
