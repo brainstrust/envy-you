@@ -95,6 +95,8 @@ SMC(flu.J_stretch_i)        = G_stretch/(1+exp(-alpha1*(P_str*state(ind.R)/SMC(f
 SMC(flu.v_KIR_i)    = z_1 * state(ind.K_p)/unitcon + z_2;                                               % mV
 SMC(flu.G_KIR_i)    = exp( z_5 * state(ind.v_i) + z_3 * state(ind.K_p)/unitcon + z_4 ); %exp( z_5 * state(ind.v_i) + z_3 * state(ind.K_p)/unitcon + z_4 );                     % pS pF-1 =s-1
 SMC(flu.J_KIR_i)    = F_il/gam * SMC(flu.G_KIR_i)*(state(ind.v_i)-SMC(flu.v_KIR_i));                                % mV s-1
+SMC(flu.K1_c)       = gam_cross*state(ind.Ca_i)^3;
+SMC(flu.K6_c)       = SMC(flu.K1_c);
 
 %% EC
 

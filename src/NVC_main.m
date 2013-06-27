@@ -4,7 +4,7 @@ tic
 % global variables
 global CASE J_PLC startpulse lengthpulse 
 CASE        = 2; 
-J_PLC 		= 0.1;
+J_PLC 		= 0.2;
 startpulse  = 200; %200
 lengthpulse = 50; %[s] Ostby: 30  
 
@@ -39,5 +39,6 @@ plot_all()
 % legend('Total Myosin','[M]','[Mp]','[AMp]','[AM]')
 % title('New')
 
-% to plot a single flux, type in plot(time,DATA(:,flu.(name))
+% to plot a single flux, type in plot(time,DATA(:,flu.(name))     
 % to plot a single state variable, type in plot(time,DATA(:,ind.(name))
+%(don't forget to put the offset!! e.g. smcoff+flu.1_c)

@@ -6,7 +6,7 @@ all_constants();
 linestylle = ':';
 
 a = zeros(1,25);
-s = zeros(1,23);
+s = zeros(1,25);
 e = zeros(1,17);
 f= zeros(1,24);
 dfdt= zeros(1,24);

@@ -89,6 +89,8 @@ flu.M               = 21;
 flu.h_r             = 22;
 flu.E_K_i           = 23;
 
+flu.K1_c            = 24;
+flu.K6_c            = 25;
 %% EC-pointers
 
 flu.v_coup_j         = 1;
