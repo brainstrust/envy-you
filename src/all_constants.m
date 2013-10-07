@@ -60,7 +60,7 @@ Fmax_i		= 0.23;		% [microM/s]
 Kr_i 		= 1; 		% [microM] ; Half saturation constant for agonist-dependent Ca$^{2+}$ entry
 G_Ca		= 0.00129;	% [microM/mV/s]
 v_Ca1		= 100;		% [mV]
-v_Ca2		= -35; %-24;	% [mV]
+v_Ca2		= -24;	    % [mV]  why did we change it to -35 temporarely???
 R_Ca		= 8.5;		% [mV]
 G_NaCa		= 0.00316;	% microM/mV/s
 c_NaCa		= 0.5;		% microM
@@ -120,7 +120,7 @@ vK_j 		= -80;
 a1			= 53.3;
 a2			= 53.3;
 b			= -80.8;
-c 			= -6.4; %-0.4; %changed value!!! 
+c 			= -0.4; %-6.4; %changed value!!! 
 m3b			= 1.32e-3;
 m4b			= 0.3;
 m3s			= -0.28;
@@ -133,34 +133,55 @@ k_j			= 0.1;
 
 
 
-global CASE J_PLC
+global CASE J_PLC g_hat p_hat p_hatIP3
 
-if CASE==1
-g_hat 		= 50;
+if CASE==0
+g_hat 		= 0;
+p_hat 		= 0;
+p_hatIP3 	= 0;
+elseif CASE==1
+g_hat 		= 0.5;
 p_hat 		= 0;
 p_hatIP3 	= 0.05;
 elseif CASE==2
-g_hat 		= 5;
+g_hat 		= 0.5;
 p_hat 		= 0.05;
 p_hatIP3 	= 0.05;
 elseif CASE==3
 g_hat 		= 0;
 p_hat 		= 0;
 p_hatIP3 	= 0.05;
-elseif CASE==0
-g_hat 		= 0;
+elseif CASE==4 % was CASE 5 before!
+g_hat 		= 0.5;
+p_hat 		= 0.05;
+p_hatIP3 	= 0;
+elseif CASE==5 % was CASE 6 before!
+g_hat 		= 0.5;
 p_hat 		= 0;
 p_hatIP3 	= 0;
+elseif CASE==6 % was CASE 7 before!
+g_hat 		= 0;
+p_hat 		= 0.05;
+p_hatIP3 	= 0;
+elseif CASE==7 % was CASE 8 before!
+g_hat 		= 0;
+p_hat 		= 0.05;
+p_hatIP3 	= 0.05;
+elseif CASE==8     % not really part of the set
+g_hat 		= 50;
+p_hat 		= 0.05;
+p_hatIP3 	= 0.05;
 end
 
-%% Myosin crossbridge model
 
-K2_c        = 0.5;
-K3_c        = 0.4;
-K4_c        = 0.1;
-K5_c        = 0.5;
-K7_c        = 0.1;
-gam_cross   = 17;
+%% Myosin crossbridge model
+global C_Hillmann
+K2_c        = 0.5 * C_Hillmann;
+K3_c        = 0.4 * C_Hillmann;
+K4_c        = 0.1 * C_Hillmann;
+K5_c        = 0.5 * C_Hillmann;
+K7_c        = 0.1 * C_Hillmann;
+gam_cross   = 17 * C_Hillmann;
 
 %% Koningsberger
 
@@ -178,12 +199,11 @@ gam_cross   = 17;
 
 %% Kelvin Voigt
 
-P_r         = 4000;
-rb_r        = 20e-6;
-h0_r        = 3e-6;
+P_r         = 4000;  % Pa
+rb_r        = 20e-6; % m
+h0_r        = 3e-6;  % m 
 R0pas_r     = 20e-6;
 R0act_r     = 12e-6;
-Etot_r      = 233e3;
 Eact_r      = 233e3;
 Epas_r      = 66e3;
 nu_r        = 1e4;

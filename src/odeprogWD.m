@@ -36,7 +36,7 @@ else
         tfin=odeprogglobvar(1);
         sstrt=odeprogglobvar(2:7);
         figure(95); 
-        set(gcf,'Position',[1500,10,100,500]);
+        set(gcf,'Position',[20,20,100,500]);
         axes('Position',[0.5,0.25,0.25,0.6]);
         axis([1,2,0,tfin]);
         set(gca,'XTickLabel',[],'NextPlot','replacechildren');
