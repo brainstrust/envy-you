@@ -1,0 +1,68 @@
+%\documentclass[12pt]{article}
+%\usepackage{amsmath,xcolor,todonotes,graphicx,marvosym,natbib,dsfont,import,hyperref}
+
+\begin{document}
+
+
+\section{Envy-You Version 1.0}
+This most recent version 1.0 of the envy-you code is based on the previous versions envy-you 0.1 and 0.2, the main changes being:
+
+\subsection{Parameters}
+The most important parameters that can be used to adjust the model are listed as global variables in the main script 'NVC\_main.m', namely
+\begin{itemize}
+	\item [\textit{t\_start} -] start time of simulation (s)
+	\item [\textit{t\_end} -]  end time of simulation (s)
+	\item [\textit{startpulse} -]  start of neuronal pulse (s)
+	\item [\textit{lengthpulse} -]  length of neuronal pulse (s)
+	\item [\textit{CASE} -]  set of coupling coefficients 
+	\item [\textit{J\_PLC} -]  EC agonist concentration ($\mu$M s$^{-1}$)
+	\item [\textit{C\_Hillmann} -]  scaling factor for the Hai\&Murphy rate constants based on \citet{Hillman2011}
+	\item [\textit{stretch\_ch} -] to activate/deactivate stretch-activated channels in EC and SMC
+	\item [\textit{only\_Koenig} -]  to simulate only the Koenigsberger model (other sub-models will still be considered, but the KIR channel is set to 0)
+\end{itemize}
+At the end of each simulation \textit{save\_all()} is called and will give the option to save all parameters and figures in a separate folder with a time stamp. 
+
+\subsection{Radius and wall thickness equation}
+The previous equations of the radius, R, and the arterial wall thickness, \textit{h}, seemed to have led to an instability of the system at very low $J_{plc}$ values. Due to that h is now set to a fixed ratio of the radius (see 'all\_fluxes.m'):
+\[h = 0.1R\]
+\subsection{Hillmann coefficients}
+The reaction rate constants used by \citep{Hai1988} are based on experiments with swine carotid arteries and there is no evidence that they can be used for human brain arteries. Within her paper \citep{Hillman2011} E. Hillman's  could show that the hemodynamic response in rats takes place within a couple seconds, whereas with the \citep{Hai1988} model we obtain maximal dilation within approximately a minute. Based on \citep{Hillman2011} we introduce a scaling coefficient \textit{'C\_Hillmann'}, that allows us to scale all rate constants simultaneously. 
+
+\subsection{Figures position} 
+All figures are now automatically placed in the main screen. 
+
+\subsection{Coupling coefficients}
+The three coupling coefficients ($v_{cpl}, Ca_{cpl}, P3_{cpl}$) are chosen the following:
+
+\begin{table}[h!]
+\centering
+\caption{All CASE's.}
+\begin{tabular}{c c c c}
+\hline
+       & $v_{cpl}$ (s$^{-1}$) & $Ca_{cpl}$ (s$^{-1}$)& $P3_{cpl}$ (s$^{-1}$)\\
+       \hline \hline
+CASE 0 & 0     & 0     & 0     \\
+CASE 1 & 0.5   & 0     & 0.05  \\
+CASE 2 & 0.5   & 0.05  & 0.05  \\
+CASE 3 & 0     & 0     & 0.05  \\
+CASE 4 & 0.5   & 0.05  & 0     \\
+CASE 5 & 0.5   & 0     & 0     \\
+CASE 6 & 0     & 0.05  & 0     \\
+CASE 7 & 0     & 0.05  & 0.05  \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Corrected mistakes}
+\begin{itemize}
+\item plotting of stretch-activated channels in EC (figure 3 - EC fluxes)
+\item K$_{7}$ corrected to be K$_{4}$ in the differential equation for AMp (didn't change any results because K$_{4}$ = K$_{7}$ = 0.1 s$ ^{-1} $)
+\item \textit{v\_Ca2} changed back to -24 mV (original value from \cite{Koenigsberger2005})
+\item maximal voltage coupling $v_{cpl}$ set to 0.5 s$^{-1}$ (any stronger coupling leads to EC clinging to SMC and a too low membrane potential in SMC for VOCC to open during neuronal pulse)
+\end{itemize}
+
+
+\bibliography{library} 
+\bibliographystyle{KathisBibstyle} 
+
+\end{document}

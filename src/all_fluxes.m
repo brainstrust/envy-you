@@ -2,7 +2,7 @@ function [NE,AC,SMC,EC] = all_fluxes (t,state)
 %% load the constants for the fluxes and pointers:
     all_indices();
     all_constants();
-
+    global stretch_ch only_Koenig
 %% Calculate the fluxes for the Astrocyte (AC)
 
 % Below all the additional equations are calculated and stores in AC, SMC
@@ -72,7 +72,8 @@ AC(flu.phi_w)    = psi_w*cosh((AC(flu.v_k)+v_6)/(2*v_4));                       
 
 SMC(flu.M)                   = 1 - state(ind.Mp) - state(ind.AM) - state(ind.AMp);                         
 SMC(flu.E_K_i)              = (R_gas * Temp) / (z_K  * Farad)*unitcon*log(state(ind.K_p)/state(ind.K_i));
-SMC(flu.h_r)                 =  -state(ind.R) + sqrt(state(ind.R)^2 + 2*rb_r*h0_r + h0_r^2);
+% SMC(flu.h_r)                 =  -state(ind.R) + sqrt(state(ind.R)^2 + 2*rb_r*h0_r + h0_r^2);
+SMC(flu.h_r)                 = 0.1* state(ind.R);
 
 SMC(flu.v_coup_i)            = - g_hat * ( state(ind.v_i) - state(ind.v_j) );   
 SMC(flu.Ca_coup_i)           = - p_hat * ( state(ind.Ca_i) - state(ind.Ca_j) );
@@ -90,11 +91,23 @@ SMC(flu.J_Cl_i)             = G_Cl * ( state(ind.v_i) - v_Cl );
 SMC(flu.J_K_i)              = G_K * state(ind.w_i) * ( state(ind.v_i) - vK_i );
 SMC(flu.Kactivation_i)      = ( state(ind.Ca_i) + c_w )^2 / ( (state(ind.Ca_i) + c_w)^2 + bet*exp(-(state(ind.v_i) - v_Ca3)/R_K) );
 SMC(flu.J_degrad_i)         = k_i * state(ind.I_i);
-SMC(flu.J_stretch_i)        = G_stretch/(1+exp(-alpha1*(P_str*state(ind.R)/SMC(flu.h_r) - sig0))) * (state(ind.v_i) - Esac);
 
-SMC(flu.v_KIR_i)    = z_1 * state(ind.K_p)/unitcon + z_2;                                               % mV
-SMC(flu.G_KIR_i)    = exp( z_5 * state(ind.v_i) + z_3 * state(ind.K_p)/unitcon + z_4 ); %exp( z_5 * state(ind.v_i) + z_3 * state(ind.K_p)/unitcon + z_4 );                     % pS pF-1 =s-1
-SMC(flu.J_KIR_i)    = F_il/gam * SMC(flu.G_KIR_i)*(state(ind.v_i)-SMC(flu.v_KIR_i));                                % mV s-1
+if strcmp(stretch_ch,'ON') == 1
+   SMC(flu.J_stretch_i)     = G_stretch/(1+exp(-alpha1*(P_str*state(ind.R)/SMC(flu.h_r) - sig0))) * (state(ind.v_i) - Esac);
+elseif strcmp(stretch_ch,'OFF') == 1
+   SMC(flu.J_stretch_i)     = 0;
+end
+
+if strcmp(only_Koenig,'OFF') == 1
+   SMC(flu.v_KIR_i)    = z_1 * state(ind.K_p)/unitcon + z_2;                                               % mV
+   SMC(flu.G_KIR_i)    = exp( z_5 * state(ind.v_i) + z_3 * state(ind.K_p)/unitcon + z_4 ); %exp( z_5 * state(ind.v_i) + z_3 * state(ind.K_p)/unitcon + z_4 );                     % pS pF-1 =s-1
+   SMC(flu.J_KIR_i)    = F_il/gam * SMC(flu.G_KIR_i)*(state(ind.v_i)-SMC(flu.v_KIR_i));                                % mV s-1
+elseif strcmp(only_Koenig,'ON') == 1
+   SMC(flu.v_KIR_i)    = 0;
+   SMC(flu.G_KIR_i)    = 0;
+   SMC(flu.J_KIR_i)    = 0;
+end
+
 SMC(flu.K1_c)       = gam_cross*state(ind.Ca_i)^3;
 SMC(flu.K6_c)       = SMC(flu.K1_c);
 
@@ -116,9 +129,12 @@ EC(flu.J_SKCa_j) 			= 0.6/2 * ( 1 + tanh( ( log10(state(ind.Ca_j)) - m3s ) / ( m
 EC(flu.J_K_j)               = G_tot * ( state(ind.v_j) - vK_j ) * ( EC(flu.J_BKCa_j) + EC(flu.J_SKCa_j) );
 EC(flu.J_R_j)               = G_R * ( state(ind.v_j) - v_rest);
 EC(flu.J_degrad_j)          = k_j * state(ind.I_j);
-EC(flu.J_stretch_j)         = G_stretch/(1+exp(-alpha1*(P_str*state(ind.R)/SMC(flu.h_r) - sig0))) * (state(ind.v_j) - Esac);
 
-
+if strcmp(stretch_ch,'ON') == 1
+   EC(flu.J_stretch_j)      = G_stretch/(1+exp(-alpha1*(P_str*state(ind.R)/SMC(flu.h_r) - sig0))) * (state(ind.v_j) - Esac);
+elseif strcmp(stretch_ch,'OFF') == 1
+   EC(flu.J_stretch_j)      =  0;
+end
 end
 
 
